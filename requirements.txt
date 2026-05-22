@@ -17,7 +17,7 @@ markdown>=3.5.0
 requests>=2.31.0
 
 # 向量数据库（语义搜索，本地）
-chromadb>=0.5.0
+chromadb>=0.4.0,<0.6.0
 
 # 工具库
 python-dotenv>=1.0.0        # 管理 .env 环境变量
