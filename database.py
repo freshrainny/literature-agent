@@ -10,8 +10,13 @@ import os
 from datetime import datetime
 from typing import Optional
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "data", "literature.db")
-CHROMA_PATH = os.path.join(os.path.dirname(__file__), "data", "chroma_db")
+# 支持通过环境变量 DATA_DIR 指定持久化目录（Railway Volume 挂载路径）
+# 默认使用项目目录下的 data/ 文件夹
+_DATA_DIR = os.environ.get("DATA_DIR") or os.path.join(os.path.dirname(__file__), "data")
+os.makedirs(_DATA_DIR, exist_ok=True)
+
+DB_PATH     = os.path.join(_DATA_DIR, "literature.db")
+CHROMA_PATH = os.path.join(_DATA_DIR, "chroma_db")
 
 
 def get_db_connection():

@@ -1,17 +1,22 @@
 # 核心依赖
-streamlit>=1.32.0          # Web UI 框架
+streamlit>=1.40.0          # Web UI 框架（需要 st.pills，1.40+）
 langchain>=0.2.0            # LangChain 核心
-langchain-openai>=0.1.0     # OpenAI 集成
+langchain-openai>=0.1.0     # OpenAI / DeepSeek / Qwen 等兼容接口
+langchain-anthropic>=0.1.0  # Anthropic Claude
+langchain-google-genai>=1.0.0  # Google Gemini
 langgraph>=0.1.0            # Agent 框架（ReAct）
 langchain-core>=0.2.0       # LangChain 核心组件
 
 # PDF 处理
-pymupdf>=1.23.0             # PDF 解析（fitz），你已经在用了
+pymupdf>=1.23.0             # PDF 解析（fitz）
+
+# Markdown 渲染（Notebook 页面）
+markdown>=3.5.0
 
 # 网络请求（获取文献元数据）
 requests>=2.31.0
 
-# 向量数据库（语义搜索，可选）
+# 向量数据库（语义搜索，本地）
 chromadb>=0.5.0
 
 # 工具库

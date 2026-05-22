@@ -42,7 +42,8 @@ st.set_page_config(
 )
 
 init_database()
-UPLOAD_DIR = os.path.join(os.path.dirname(__file__), "uploads")
+_DATA_DIR  = os.environ.get("DATA_DIR") or os.path.join(os.path.dirname(__file__), "data")
+UPLOAD_DIR = os.path.join(_DATA_DIR, "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # ─────────────────────────────────────────
